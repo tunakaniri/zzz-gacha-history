@@ -6,8 +6,8 @@ import axios from 'axios';
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // URL関連変数
-const api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('');
-const base_url = "https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog", size = 20, authkey_ver = 1, sign_type = 2, lang = "ja", region = "prod_gf_jp", game_biz = "nap_global";
+const authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('');
+const size = 20, authkey_ver = ref(1), sign_type = ref(2), lang = ref("ja"), region = ref("prod_gf_jp"), game_biz = ref("nap_global");
 
 // json関連変数
 const data = ref([]), temp_data = ref([]), success_message = ref(''), error_message = ref('');
@@ -43,65 +43,57 @@ function assignData(response) {
     }
 }
 
-// const allowed_origins = [
-// "https://public-operation-nap-sg.hoyoverse.com",
-// "https://tunakaniri.github.io",
-// "https://tunakaniri.com",
-// ];
-
 // APIを使用してガチャデータを取得
 async function getGachaData() {
-    await axios.get(api_url.value, {
-        params: {
-            end_id: end_id.value
-        },
-        headers: {
-            'Access-Control-Allow-Origin': "*"
-        }
-    })
-        // アクセス成功
-        .then(function (response) {
-            // console.log(response);
-            if (response.data.data.list.length === 0 && loop === 0) {
-                error_message.value = "Sorry, No Data Found…";
-                // console.log("END!!!!");
-            } else if (response.data.data.list.length < size) {
-                assignData(response);
-                success_message.value = "Completed!";
-                // console.log("LAST!!!!");
-            } else {
-                assignData(response);
-                // console.log("data:", data.value);
-                end_id.value = data.value[data.value.length - 1].id;
-                idx += size;
-            }
-            len = response.data.data.list.length;
-            // console.log("len:", response.data.data.list.length);
-        })
-        // アクセス失敗
-        .catch(function (error) {
-            if (error.response) {
-                // リクエストが行われ、サーバーは 2xx の範囲から外れるステータスコードで応答しました
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
-            } else if (error.request) {
-                // リクエストは行われましたが、応答がありませんでした
-                // `error.request` は、ブラウザでは XMLHttpRequest のインスタンスになり、
-                // Node.js では http.ClientRequest のインスタンスになります。
-                console.log(error.request);
-            } else {
-                // エラーをトリガーしたリクエストの設定中に何かが発生しました
-                console.log('Error: ', error.message);
-                if (response.data.message !== "OK") {
-                    console.log('ServerMessage: ', response.data.message);
-                    error_message.value = response.data.message;
-                } else {
-                    error_message.value = response.data.message;
-                }
-            }
-            console.log(error.config);
+    try {
+        const response = await axios.get('/api' + '?authkey=' + authkey.value, { // /apiはvite.config.jsに記載、authkeyはparamsで指定すると記号が変換されるため直接代入
+            params: {
+                size: size,
+                authkey_ver: authkey_ver.value,
+                sign_type: sign_type.value,
+                lang: lang.value,
+                region: region.value,
+                game_biz: game_biz.value,
+                real_gacha_type: real_gacha_type.value,
+                end_id: end_id.value
+            },
         });
+
+        // アクセス成功
+        console.log(response);
+        console.log(response.request.responseURL);
+        if (response.data.data.list.length === 0 && loop === 0) {
+            error_message.value = "Sorry, No Data Found…";
+        } else if (response.data.data.list.length < size) {
+            assignData(response);
+            success_message.value = "Completed!";
+        } else {
+            assignData(response);
+            end_id.value = data.value[data.value.length - 1].id;
+            idx += size;
+        }
+        len = response.data.data.list.length;
+        // アクセス失敗
+    } catch (error) {
+        if (error.response) {
+            // リクエストが行われ、サーバーは 2xx の範囲から外れるステータスコードで応答しました
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+            error_message.value = `Error ${error.response.status}: ${error.response.data.message || 'Unknown error'}`;
+        } else if (error.request) {
+            // リクエストは行われましたが、応答がありませんでした
+            // `error.request` は、ブラウザでは XMLHttpRequest のインスタンスになり、
+            // Node.js では http.ClientRequest のインスタンスになります。
+            console.log(error.request);
+            error_message.value = "No response from the server.";
+        } else {
+            // エラーをトリガーしたリクエストの設定中に何かが発生しました
+            console.log('Error: ', error.message);
+            error_message.value = error.message;
+        }
+        console.log(error.config);
+    }
 }
 
 // 送信ボタン処理
@@ -117,7 +109,7 @@ async function onSend() {
         end_id.value = 0;
     }
 
-    api_url.value = base_url + "?authkey_ver=" + authkey_ver + "&sign_type=" + sign_type + "&lang=" + lang + "&region=" + region + "&game_biz=" + game_biz + "&size=" + size + "&authkey=" + authkey.value + "&real_gacha_type=" + real_gacha_type.value;
+    // api_url.value = base_url + "?authkey_ver=" + authkey_ver + "&sign_type=" + sign_type + "&lang=" + lang + "&region=" + region + "&game_biz=" + game_biz + "&size=" + size + "&authkey=" + authkey.value + "&real_gacha_type=" + real_gacha_type.value;
     // console.log(api_url.value + "&end_id=" + end_id.value);
 
     for (loop = 0; ; loop++) {

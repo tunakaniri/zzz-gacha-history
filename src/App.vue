@@ -109,14 +109,10 @@ async function onSend() {
         end_id.value = 0;
     }
 
-    // api_url.value = base_url + "?authkey_ver=" + authkey_ver + "&sign_type=" + sign_type + "&lang=" + lang + "&region=" + region + "&game_biz=" + game_biz + "&size=" + size + "&authkey=" + authkey.value + "&real_gacha_type=" + real_gacha_type.value;
-    // console.log(api_url.value + "&end_id=" + end_id.value);
-
     for (loop = 0; ; loop++) {
         if (len === size || loop === 0) {
             await sleep(1000);
             await getGachaData();
-            // console.log(api_url.value + "&end_id=" + end_id.value);
             // console.log("alen:", len);
             // console.log("aloop:", loop);
         } else {

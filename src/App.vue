@@ -6,7 +6,7 @@ import axios from 'axios';
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // URL関連変数
-const api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('');
+const base_url = 'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog', api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('');
 const size = 20, authkey_ver = ref(1), sign_type = ref(2), lang = ref("ja"), region = ref("prod_gf_jp"), game_biz = ref("nap_global");
 
 // json関連変数
@@ -46,7 +46,7 @@ function assignData(response) {
 // APIを使用してガチャデータを取得
 async function getGachaData() {
     try {
-        const response = await axios.get(api_url.value + '?authkey=' + authkey.value, {
+        const response = await axios.get(api_url.value, {
             params: {
                 size: size,
                 authkey_ver: authkey_ver.value,
@@ -109,7 +109,7 @@ async function onSend() {
         end_id.value = 0;
     }
 
-    api_url.value = import.meta.env.API_URL || 'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog'    // /apiは.env.productionに記載、authkeyはparamsで指定すると記号が変換されるため直接代入
+    api_url.value = base_url + '?authkey=' + authkey.value
     for (loop = 0; ; loop++) {
         if (len === size || loop === 0) {
             await sleep(1000);

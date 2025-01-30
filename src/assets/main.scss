@@ -1,0 +1,60 @@
+// @use './default.scss';
+
+// 入力フォーム
+.form-required::after {
+    content: " *";
+    color: red;
+}
+
+label {
+    display: inline-block;
+    width: 150px;
+    vertical-align: top;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+// 表
+table {
+    border-collapse: collapse;
+    // width: 100%;
+    border: 3px solid black;
+}
+
+th {
+    border: 1px solid black;
+    border-bottom: 4px double black;
+    padding: 8px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+// フッター固定
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+footer {
+    text-align: center;
+    position: sticky;
+    top: 100vh;
+    width: 100%;
+    padding: 30px 0;
+    background-color: black;
+    color: #fff;
+}

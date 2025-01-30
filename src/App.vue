@@ -49,7 +49,8 @@ async function getGachaData() {
     await axios.get(api_url.value, {
         params: {
             end_id: end_id.value
-        }
+        },
+        headers: { 'X-Requested-With': 'XMLHttpRequest' }
     })
         // アクセス成功
         .then(function (response) {

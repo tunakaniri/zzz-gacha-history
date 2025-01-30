@@ -13,8 +13,14 @@ const base_url = "https://public-operation-nap-sg.hoyoverse.com/common/gacha_rec
 const data = ref([]), success_message = ref(''), error_message = ref('');
 let len = 0, loop = 0;
 
+const rankLabel = {
+    "2": { rank: "B", color: "blue" },
+    "3": { rank: "A", color: "fuchsia" },
+    "4": { rank: "S", color: "goldenrod" }
+};
+
+// APIを使用してガチャデータを取得
 async function get_Gacha_Data() {
-    // APIを使用してガチャデータを取得
     await axios.get(api_url.value, {
         params: {
             end_id: end_id.value
@@ -83,7 +89,7 @@ async function onSend() {
     // end_id反映
     if (input_end_id.value !== '') {
         end_id.value = input_end_id.value;
-    }else{
+    } else {
         end_id.value = 0;
     }
 
@@ -141,7 +147,7 @@ async function onSend() {
             <tr>
                 <th>idx</th>
                 <th>種類(エージェント/音動機)</th>
-                <th>ランク(B:2, A:3, S:4)</th>
+                <th>ランク</th>
                 <th>名前</th>
                 <th>引いた日付と時間</th>
                 <th>id(Debug)</th>
@@ -151,7 +157,7 @@ async function onSend() {
             <tr v-for="(item, index) in data">
                 <td>{{ index + 1 }}</td>
                 <td>{{ item.item_type }}</td>
-                <td>{{ item.rank_type }}</td>
+                <td :style="{ color: rankLabel[item.rank_type].color }">{{ rankLabel[item.rank_type].rank }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.time }}</td>
                 <td>{{ item.id }}</td>

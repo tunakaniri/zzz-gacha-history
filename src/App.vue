@@ -50,7 +50,7 @@ async function getGachaData() {
         params: {
             end_id: end_id.value
         },
-        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        headers: { 'Access-Control-Allow-Origin': 'https://public-operation-nap-sg.hoyoverse.com' }
     })
         // アクセス成功
         .then(function (response) {

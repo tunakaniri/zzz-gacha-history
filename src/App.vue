@@ -6,7 +6,7 @@ import axios from 'axios';
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // URL関連変数
-const api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('')
+const api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('');
 const base_url = "https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog", size = 20, authkey_ver = 1, sign_type = 2, lang = "ja", region = "prod_gf_jp", game_biz = "nap_global";
 
 // json関連変数

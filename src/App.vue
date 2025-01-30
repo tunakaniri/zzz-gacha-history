@@ -43,6 +43,11 @@ function assignData(response) {
     }
 }
 
+const allowed_origins = [
+    "https://public-operation-nap-sg.hoyoverse.com",
+    "https://tunakaniri.github.io",
+    "https://tunakaniri.com",
+];
 
 // APIを使用してガチャデータを取得
 async function getGachaData() {
@@ -50,7 +55,7 @@ async function getGachaData() {
         params: {
             end_id: end_id.value
         },
-        headers: { 'Access-Control-Allow-Origin': 'https://public-operation-nap-sg.hoyoverse.com' }
+        headers: { 'Access-Control-Allow-Origin': allowed_origins }
     })
         // アクセス成功
         .then(function (response) {

@@ -15,18 +15,18 @@ export async function onSend(urlVar, jsonVar) {
         if (jsonVar.data.value.length === undefined) {
             jsonVar.data.value = response.data.data.list.map((value, key) => ({
                 index: key + idx + 1,
-                item_type: value.item_type,
                 rank_type: value.rank_type,
                 name: value.name,
+                item_type: value.item_type,
                 time: value.time,
                 id: value.id
             }));
         } else {
             temp_data = response.data.data.list.map((value, key) => ({
                 index: key + idx + 1,
-                item_type: value.item_type,
                 rank_type: value.rank_type,
                 name: value.name,
+                item_type: value.item_type,
                 time: value.time,
                 id: value.id
             }));
@@ -37,7 +37,7 @@ export async function onSend(urlVar, jsonVar) {
     // APIを使用してガチャデータを取得
     async function getGachaData() {
         try {
-            const response = await axios.get(api_url.value + '?authkey=' + authkey.value, {
+            const response = await axios.get(api_url.value + '?authkey=' + urlVar.authkey.value, {
                 params: {
                     size: size,
                     authkey_ver: urlVar.authkey_ver.value,
@@ -89,7 +89,9 @@ export async function onSend(urlVar, jsonVar) {
     idx = 0, len = 0;
     jsonVar.data.value = [], temp_data = [];
 
-    api_url.value = import.meta.env.API_URL;
+    console.log("API:",import.meta.env.VITE_API_URL);
+    api_url.value = import.meta.env.VITE_API_URL;
+    console.log(api_url.value)
     for (loop = 0; ; loop++) {
         if (len === size || loop === 0) {
             await sleep(500);

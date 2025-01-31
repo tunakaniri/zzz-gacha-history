@@ -89,9 +89,7 @@ export async function onSend(urlVar, jsonVar) {
     idx = 0, len = 0;
     jsonVar.data.value = [], temp_data = [];
 
-    console.log("API:",import.meta.env.VITE_API_URL);
     api_url.value = import.meta.env.VITE_API_URL;
-    console.log(api_url.value)
     for (loop = 0; ; loop++) {
         if (len === size || loop === 0) {
             await sleep(500);

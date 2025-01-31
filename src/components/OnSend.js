@@ -15,18 +15,18 @@ export async function onSend(urlVar, jsonVar) {
         if (jsonVar.data.value.length === undefined) {
             jsonVar.data.value = response.data.data.list.map((value, key) => ({
                 index: key + idx + 1,
-                item_type: value.item_type,
                 rank_type: value.rank_type,
                 name: value.name,
+                item_type: value.item_type,
                 time: value.time,
                 id: value.id
             }));
         } else {
             temp_data = response.data.data.list.map((value, key) => ({
                 index: key + idx + 1,
-                item_type: value.item_type,
                 rank_type: value.rank_type,
                 name: value.name,
+                item_type: value.item_type,
                 time: value.time,
                 id: value.id
             }));

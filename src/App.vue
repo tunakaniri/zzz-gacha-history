@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { onSend } from './components/OnSend';
 
-// // 【async必須】sleep(ms)用
+// 【async必須】sleep(ms)用
 // const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // onSend用変数宣言
@@ -30,6 +30,27 @@ const rankLabel = {
     "3": { rank: "A", color: "fuchsia" },
     "4": { rank: "S", color: "goldenrod" }
 };
+
+// フォーム関連変数
+const isShow = ref(false), isDisable = ref(false), authkey_form_type = ref('password'), visibility = ref('visibility');
+
+async function onSendPre() {
+    isDisable.value = !isDisable.value;
+    await onSend(urlVar, jsonVar);
+    isDisable.value = !isDisable.value;
+}
+
+// authkey非表示/表示切り替え
+function toggleShow() {
+    isShow.value = !isShow.value;
+    if (isShow.value) {
+        authkey_form_type.value = 'text';
+        visibility.value = 'visibility_off';
+    } else {
+        authkey_form_type.value = 'password';
+        visibility.value = 'visibility';
+    }
+}
 </script>
 
 <template>
@@ -38,18 +59,22 @@ const rankLabel = {
     <p v-if="jsonVar.error_message.value" class="error">ERROR: {{ jsonVar.error_message.value }}</p>
 
     <!-- 入力部分 -->
-    <form @submit.prevent="onSend(urlVar, jsonVar)">
-        <div>
-            <p>※AuthKeyは「&lt;ZZZInstallDirectory&gt;/ZenlessZoneZero_Data/webCaches/2.31.12.0/Cache/Cache_Data/data2」に記載された最新(一番下)のものを使用してください。(<a
-                    href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor">Hex
-                    Editor</a>等のバイナリエディタが必要)<br>検索用ワード(正規表現)「gacha_record.+authkey=」
-            </p>
-            <label for="urlVar.authkey.value" class="form-required">AuthKey</label>
-            <input v-model.trim="urlVar.authkey.value" :type="authkey_form_type" name="authkey" autofocus required />
-        </div>
+    <p>※AuthKeyは「&lt;ZZZInstallDirectory&gt;/ZenlessZoneZero_Data/webCaches/2.31.12.0/Cache/Cache_Data/data2」に記載された最新(一番下)のものを使用してください。(<a
+            href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor">Hex
+            Editor</a>等のバイナリエディタが必要)<br>検索用ワード(正規表現)「gacha_record.+authkey=」
+    </p>
+    <label for="urlVar.authkey.value" class="form-required">AuthKey</label>
+    <div class="form">
+        <input v-model.trim="urlVar.authkey.value" :type="authkey_form_type" name="authkey" class="password" autofocus
+            required />
+        <button class="material-symbols-outlined button-toggle" @click="toggleShow">
+            {{ visibility }}
+        </button>
+    </div>
 
-        <div>
-            <label for="urlVar.real_gacha_type.value" class="form-required">ガチャタイプ</label>
+    <div>
+        <label for="urlVar.real_gacha_type.value" class="form-required">ガチャタイプ</label>
+        <div class="form">
             <select v-model="urlVar.real_gacha_type.value">
                 <option value="1">常設</option>
                 <option value="2">独占</option>
@@ -57,26 +82,26 @@ const rankLabel = {
                 <option value="5">ボンプ</option>
             </select>
         </div>
-        <button>送信</button>
-    </form>
+    </div>
+    <button @click="onSendPre" :disabled="isDisable">送信</button>
 
     <!-- 表示部分 -->
     <table>
         <thead>
             <tr>
                 <th>idx</th>
-                <th>種類(エージェント/音動機)</th>
                 <th>ランク</th>
                 <th>名前</th>
+                <th>種類(エージェント/音動機)</th>
                 <th>引いた日付と時間</th>
             </tr>
         </thead>
         <tbody>
             <tr v-for="item in jsonVar.data.value">
                 <td>{{ item.index }}</td>
-                <td>{{ item.item_type }}</td>
                 <td :style="{ color: rankLabel[item.rank_type].color }">{{ rankLabel[item.rank_type].rank }}</td>
                 <td>{{ item.name }}</td>
+                <td>{{ item.item_type }}</td>
                 <td>{{ item.time }}</td>
             </tr>
         </tbody>

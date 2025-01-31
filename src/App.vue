@@ -105,7 +105,7 @@ async function onSend() {
     api_url.value = base_url + '?authkey=' + authkey.value
     for (loop = 0; ; loop++) {
         if (len === size || loop === 0) {
-            await sleep(1000);
+            await sleep(500);
             await getGachaData();
         } else {
             break;

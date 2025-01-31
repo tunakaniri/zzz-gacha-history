@@ -10,7 +10,7 @@ const urlVar = {
     authkey: ref(''),
     real_gacha_type: ref(1),
 
-    // 未使用
+    // 未変更
     authkey_ver: ref(1),
     sign_type: ref(2),
     lang: ref('ja'),

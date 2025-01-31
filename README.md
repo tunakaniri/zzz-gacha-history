@@ -1,6 +1,6 @@
 # zzz-gacha-history
 
-[セットアップ方法](https://github.com/tunakaniri/zzz-gacha-history/wiki/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%A7%E3%82%82%E7%B0%A1%E5%8D%98%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%81)
+[セットアップ方法](../../wiki/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%A7%E3%82%82%E7%B0%A1%E5%8D%98%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%81)
 
 This template should help get you started developing with Vue 3 in Vite.
 

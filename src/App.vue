@@ -126,6 +126,8 @@ async function onSend() {
     <!-- 入力部分 -->
     <form @submit.prevent="onSend">
         <div>
+            <p>※AuthKeyは「&lt;ZZZInstallDirectory&gt;/ZenlessZoneZero_Data/webCaches/2.31.12.0/Cache/Cache_Data/data2」に記載された最新(一番下)のものを使用してください。(<a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor">Hex Editor</a>等のバイナリエディタが必要)<br>検索用ワード(正規表現)「gacha_record.+authkey=」
+            </p>
             <label for="authkey" class="form-required">AuthKey</label>
             <input v-model.trim="authkey" type="password" name="authkey" autofocus required />
         </div>

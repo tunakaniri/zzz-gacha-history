@@ -6,7 +6,7 @@ import axios from 'axios';
 const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // URL関連変数
-const base_url = 'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog', api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref(''), input_end_id = ref('');
+const base_url = 'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog', api_url = ref(''), authkey = ref(''), real_gacha_type = ref(1), end_id = ref('');
 const size = 20, authkey_ver = ref(1), sign_type = ref(2), lang = ref("ja"), region = ref("prod_gf_jp"), game_biz = ref("nap_global");
 
 // json関連変数
@@ -55,7 +55,7 @@ async function getGachaData() {
                 region: region.value,
                 game_biz: game_biz.value,
                 real_gacha_type: real_gacha_type.value,
-                end_id: end_id.value
+                end_id: end_id.value                    // 次ページ移行用
             },
         });
 
@@ -102,23 +102,12 @@ async function onSend() {
     idx = 0, len = 0;
     data.value = [], temp_data.value = [];
 
-    // end_id反映
-    if (input_end_id.value !== '') {
-        end_id.value = input_end_id.value;
-    } else {
-        end_id.value = 0;
-    }
-
     api_url.value = base_url + '?authkey=' + authkey.value
     for (loop = 0; ; loop++) {
         if (len === size || loop === 0) {
             await sleep(1000);
             await getGachaData();
-            // console.log("alen:", len);
-            // console.log("aloop:", loop);
         } else {
-            // console.log("blen:", len);
-            // console.log("bloop:", loop);
             break;
         }
     }
@@ -146,11 +135,6 @@ async function onSend() {
                 <option value="5">ボンプ</option>
             </select>
         </div>
-
-        <div>
-            <label for="input_end_id">end_id</label>
-            <input v-model.trim="input_end_id" name="end_id" />
-        </div>
         <button>送信</button>
     </form>
 
@@ -163,7 +147,6 @@ async function onSend() {
                 <th>ランク</th>
                 <th>名前</th>
                 <th>引いた日付と時間</th>
-                <!-- <th>id(Debug)</th> -->
             </tr>
         </thead>
         <tbody>
@@ -173,7 +156,6 @@ async function onSend() {
                 <td :style="{ color: rankLabel[item.rank_type].color }">{{ rankLabel[item.rank_type].rank }}</td>
                 <td>{{ item.name }}</td>
                 <td>{{ item.time }}</td>
-                <!-- <td>{{ item.id }}</td> -->
             </tr>
         </tbody>
     </table>

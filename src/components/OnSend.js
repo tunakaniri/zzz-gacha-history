@@ -50,9 +50,12 @@ export async function onSend(urlVar, jsonVar) {
             } else {
                 assignData(response);
                 end_id.value = jsonVar.data.value[jsonVar.data.value.length - 1].id;
-                jsonVar.idx.value += size;
             }
+            // 画面表示用
+            jsonVar.idx.value += response.data.data.list.length;
+            // 終了判定用
             len = response.data.data.list.length;
+
             // アクセス失敗
         } catch (error) {
             if (error.response) {

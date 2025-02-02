@@ -7,59 +7,50 @@ const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 // 送信ボタン処理
 export async function onSend(urlVar, jsonVar) {
     // 変数宣言
-    let len = 0, loop = 0, idx = 0, temp_data = [];
-    const size = 20, api_url = ref(''), end_id = ref('');
+    let len = 0, temp_data = [];
+    const api_url = import.meta.env.VITE_API_URL, size = 20, end_id = ref('');
 
-    // 代入部分
-    function assignData(response) {
-        if (jsonVar.data.value.length === undefined) {
-            jsonVar.data.value = response.data.data.list.map((value, key) => ({
-                index: key + idx + 1,
-                rank_type: value.rank_type,
-                name: value.name,
-                item_type: value.item_type,
-                time: value.time,
-                id: value.id
-            }));
+    for (let loop = 0; ; loop++) {
+        if (len === size || loop === 0) {
+            await sleep(500);
+            await getGachaData(loop);
         } else {
-            temp_data = response.data.data.list.map((value, key) => ({
-                index: key + idx + 1,
-                rank_type: value.rank_type,
-                name: value.name,
-                item_type: value.item_type,
-                time: value.time,
-                id: value.id
-            }));
-            jsonVar.data.value = [...jsonVar.data.value, ...temp_data];
+            break;
         }
     }
 
     // APIを使用してガチャデータを取得
-    async function getGachaData() {
+    async function getGachaData(loop) {
         try {
-            const response = await axios.get(api_url.value + '?authkey=' + urlVar.authkey.value, {
+            const response = await axios.get(api_url, {
                 params: {
-                    size: size,
                     authkey_ver: urlVar.authkey_ver.value,
                     sign_type: urlVar.sign_type.value,
+                    authkey: urlVar.authkey.value,
                     lang: urlVar.lang.value,
                     region: urlVar.region.value,
                     game_biz: urlVar.game_biz.value,
+                    size: size,
                     real_gacha_type: urlVar.real_gacha_type.value,
-                    end_id: end_id.value                               // 次ページ移行用
+                    // 次ページ移行用
+                    end_id: end_id.value
                 },
             });
+
+            // authkeyの期限が切れていた場合
+            if (response.data.message === "auth key time out") {
+                jsonVar.announce_message.value = "authkeyの有効期限が切れています。一度ゲーム画面に戻り変調履歴画面(変調>詳細>変調履歴)を開いて、再度authkeyを取得してください。";
+            }
 
             // アクセス成功
             if (response.data.data.list.length === 0 && loop === 0) {
                 jsonVar.error_message.value = "Sorry, No Data Found…";
             } else if (response.data.data.list.length < size) {
                 assignData(response);
-                jsonVar.success_message.value = "Completed!";
             } else {
                 assignData(response);
                 end_id.value = jsonVar.data.value[jsonVar.data.value.length - 1].id;
-                idx += size;
+                jsonVar.idx.value += size;
             }
             len = response.data.data.list.length;
             // アクセス失敗
@@ -85,17 +76,17 @@ export async function onSend(urlVar, jsonVar) {
         }
     }
 
-    // 変数、配列初期化
-    idx = 0, len = 0;
-    jsonVar.data.value = [], temp_data = [];
-
-    api_url.value = import.meta.env.VITE_API_URL;
-    for (loop = 0; ; loop++) {
-        if (len === size || loop === 0) {
-            await sleep(500);
-            await getGachaData();
-        } else {
-            break;
-        }
+    // 代入部分
+    function assignData(response) {
+        temp_data = response.data.data.list.map((value, key) => ({
+            index: key + jsonVar.idx.value + 1,
+            rank_type: value.rank_type,
+            name: value.name,
+            item_type: value.item_type,
+            time: value.time,
+            real_gacha_type: value.gacha_type,
+            id: value.id
+        }));
+        jsonVar.data.value = [...jsonVar.data.value, ...temp_data];
     }
 }

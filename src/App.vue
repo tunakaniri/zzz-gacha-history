@@ -94,6 +94,7 @@ async function onSendPre() {
     }
 }
 
+// 送信ボタン無効化
 const isButtonDisable = computed(function () {
     return isProsessing.value || input_authkey.value.trim() === '';
 });
@@ -123,7 +124,7 @@ function toggleShow() {
             Editor</a>等のバイナリエディタが必要)<br>検索用ワード(正規表現)「gacha_record/.*?authkey=」
     </p>
     <label for="input_authkey" class="form-required">AuthKey</label>
-    <div class="form">
+    <div class="input">
         <input v-model.trim="input_authkey" :type="authkey_form_type" name="authkey" class="password" autofocus
             required />
         <button class="material-symbols-outlined button-toggle" @click="toggleShow">

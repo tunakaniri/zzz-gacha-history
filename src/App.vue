@@ -145,7 +145,7 @@ function toggleShow() {
                 <th>idx</th>
                 <th>ランク</th>
                 <th>名前</th>
-                <th>種類(エージェント/音動機)</th>
+                <th>種類</th>
                 <th v-if="input_real_gacha_type === 0">ガチャタイプ</th>
                 <th>引いた日付と時間</th>
             </tr>

@@ -73,7 +73,12 @@ async function onSendPre() {
             if (key !== '0') {
                 urlVar.real_gacha_type.value = key;
                 await onSend(urlVar, jsonVar);
-                jsonVar.success_message.value = gachaType[key] + "Completed!";
+                // エラーがあれば終了
+                if (jsonVar.error_message.value) {
+                    break;
+                } else {
+                    jsonVar.success_message.value = gachaType[key] + "Completed!";
+                }
             }
         }
     } else {

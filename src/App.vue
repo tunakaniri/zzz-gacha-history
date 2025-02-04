@@ -43,7 +43,7 @@ const gachaType = {
 };
 
 // フォーム関連変数
-const input_authkey = ref(''), input_real_gacha_type = ref(0), isShow = ref(false), isProsessing = ref(false), authkey_form_type = ref('password'), visibility = ref('visibility');
+const input_authkey = ref(''), input_real_gacha_type = ref(0), isShow = ref(false), isProsessing = ref(false), authkey_form_type = ref('password'), authkeyPattern = ref(/^(?:[a-zA-Z0-9]|%2B|%2F)+$/), visibility = ref('visibility');
 
 // jsonVarの初期化
 function resetJsonVar() {
@@ -67,13 +67,23 @@ async function onSendPre() {
     // データリセット
     resetJsonVar();
 
+    // authkeyに不正な値が含まれていないか検証
+    if (!/^[a-zA-Z0-9+/]+$/.test(urlVar.authkey.value)) {
+        jsonVar.error_message.value = "The authkey you entered appears to be an invalid value. Sorry, please try again.";
+        return (1);
+    }
     // 送信処理
     if (input_real_gacha_type.value === 0) {
         for (let key in gachaType) {
             if (key !== '0') {
                 urlVar.real_gacha_type.value = key;
                 await onSend(urlVar, jsonVar);
-                jsonVar.success_message.value = gachaType[key] + "Completed!";
+                // エラーがあれば終了
+                if (jsonVar.error_message.value) {
+                    break;
+                } else {
+                    jsonVar.success_message.value = gachaType[key] + "Completed!";
+                }
             }
         }
     } else {
@@ -89,8 +99,9 @@ async function onSendPre() {
     }
 }
 
+// 送信ボタン無効化
 const isButtonDisable = computed(function () {
-    return isProsessing.value || input_authkey.value.trim() === '';
+    return isProsessing.value || !input_authkey.value.trim().match(authkeyPattern.value);
 });
 
 // authkey非表示/表示切り替え
@@ -118,9 +129,9 @@ function toggleShow() {
             Editor</a>等のバイナリエディタが必要)<br>検索用ワード(正規表現)「gacha_record/.*?authkey=」
     </p>
     <label for="input_authkey" class="form-required">AuthKey</label>
-    <div class="form">
-        <input v-model.trim="input_authkey" :type="authkey_form_type" name="authkey" class="password" autofocus
-            required />
+    <div class="input">
+        <input v-model.trim="input_authkey" :type="authkey_form_type" name="authkey" class="password"
+            :pattern="authkeyPattern.value" autofocus required />
         <button class="material-symbols-outlined button-toggle" @click="toggleShow">
             {{ visibility }}
         </button>
@@ -145,7 +156,7 @@ function toggleShow() {
                 <th>idx</th>
                 <th>ランク</th>
                 <th>名前</th>
-                <th>種類(エージェント/音動機)</th>
+                <th>種類</th>
                 <th v-if="input_real_gacha_type === 0">ガチャタイプ</th>
                 <th>引いた日付と時間</th>
             </tr>

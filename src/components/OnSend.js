@@ -8,7 +8,7 @@ const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 export async function onSend(urlVar, jsonVar) {
     // 変数宣言
     let len = 0, temp_data = [];
-    const api_url = import.meta.env.VITE_API_URL, size = 20, end_id = ref('');
+    const api_url = 'https://zzz-gacha-history-proxy.tunakaniri.workers.dev', size = 20, end_id = ref('');
 
     for (let loop = 0; ; loop++) {
         if (len === size || loop === 0) {

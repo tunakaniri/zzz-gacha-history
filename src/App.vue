@@ -1,30 +1,30 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, reactive } from 'vue';
 import { onSend } from './components/OnSend';
 
 // 【async必須】sleep(ms)用
 // const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 
 // onSend用変数宣言
-const urlVar = {
-    authkey: ref(''),
-    real_gacha_type: ref(1),
+const urlVar = reactive({
+    authkey: '',
+    real_gacha_type: '',
 
     // 未変更
-    authkey_ver: ref(1),
-    sign_type: ref(2),
-    lang: ref('ja'),
-    region: ref('prod_gf_jp'),
-    game_biz: ref('nap_global'),
-};
+    authkey_ver: 1,
+    sign_type: 2,
+    lang: 'ja',
+    region: 'prod_gf_jp',
+    game_biz: 'nap_global',
+});
 
-const jsonVar = {
-    idx: ref(0),
-    data: ref([]),
-    announce_message: ref(''),
-    success_message: ref(''),
-    error_message: ref('')
-};
+const jsonVar = reactive({
+    idx: 0,
+    data: [],
+    announce_message: '',
+    success_message: '',
+    error_message: ''
+});
 
 // ランク表示用
 const rankLabel = {
@@ -49,12 +49,12 @@ const input_authkey = ref(''), input_real_gacha_type = ref(0), isShow = ref(fals
 function resetJsonVar() {
     Object.keys(jsonVar).forEach(key => {
         // 配列か否か
-        if (Array.isArray(jsonVar[key].value)) {
-            jsonVar[key].value = [];
-        } else if (Number.isInteger(jsonVar[key].value)) {
-            jsonVar[key].value = 0;
+        if (Array.isArray(jsonVar[key])) {
+            jsonVar[key] = [];
+        } else if (Number.isInteger(jsonVar[key])) {
+            jsonVar[key] = 0;
         } else {
-            jsonVar[key].value = '';
+            jsonVar[key] = '';
         }
     });
 }
@@ -63,7 +63,7 @@ async function onSendPre() {
     // 処理中フラグ
     isProsessing.value = true;
     // authkeyをデコード(パラメータとして渡すときにエンコードされるため)
-    urlVar.authkey.value = decodeURIComponent(input_authkey.value);
+    urlVar.authkey = decodeURIComponent(input_authkey.value);
     // データリセット
     resetJsonVar();
 
@@ -71,26 +71,26 @@ async function onSendPre() {
     if (input_real_gacha_type.value === 0) {
         for (let key in gachaType) {
             if (key !== '0') {
-                urlVar.real_gacha_type.value = key;
+                urlVar.real_gacha_type = key;
                 await onSend(urlVar, jsonVar);
                 // エラーがあれば終了
-                if (jsonVar.error_message.value) {
+                if (jsonVar.error_message) {
                     break;
                 } else {
-                    jsonVar.success_message.value = gachaType[key] + "Completed!";
+                    jsonVar.success_message = gachaType[key] + "Completed!";
                 }
             }
         }
     } else {
-        urlVar.real_gacha_type.value = input_real_gacha_type.value;
+        urlVar.real_gacha_type = input_real_gacha_type.value;
         await onSend(urlVar, jsonVar);
     }
 
     // 処理中フラグ削除
     isProsessing.value = false;
     // 終了メッセージ
-    if (jsonVar.data.value.length !== 0) {
-        jsonVar.success_message.value = "Completed!";
+    if (jsonVar.data.length !== 0) {
+        jsonVar.success_message = "Completed!";
     }
 }
 
@@ -114,9 +114,9 @@ function toggleShow() {
 
 <template>
     <!-- ステータス表示 -->
-    <p v-if="jsonVar.announce_message.value" class="error">ANNOUNCE: {{ jsonVar.announce_message.value }}</p>
-    <p v-if="jsonVar.success_message.value" class="success">{{ jsonVar.success_message.value }}</p>
-    <p v-if="jsonVar.error_message.value" class="error">ERROR: {{ jsonVar.error_message.value }}</p>
+    <p v-if="jsonVar.announce_message" class="error">ANNOUNCE: {{ jsonVar.announce_message }}</p>
+    <p v-if="jsonVar.success_message" class="success">{{ jsonVar.success_message }}</p>
+    <p v-if="jsonVar.error_message" class="error">ERROR: {{ jsonVar.error_message }}</p>
 
     <!-- 入力部 -->
     <p>※AuthKeyは「&lt;ZZZInstallDirectory&gt;/ZenlessZoneZero_Data/webCaches/2.31.12.0/Cache/Cache_Data/data2」に記載された最新(一番下)のものを使用してください。(<a
@@ -151,13 +151,13 @@ function toggleShow() {
                 <th>idx</th>
                 <th>ランク</th>
                 <th>名前</th>
-                <th>種類</th>
+                <th>種別</th>
                 <th v-if="input_real_gacha_type === 0">ガチャタイプ</th>
                 <th>引いた日付と時間</th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="item in jsonVar.data.value" :key="item.index">
+            <tr v-for="item in jsonVar.data" :key="item.index">
                 <td>{{ item.index }}</td>
                 <td :style="{ color: rankLabel[item.rank_type].color }">{{ rankLabel[item.rank_type].rank }}</td>
                 <td>{{ item.name }}</td>

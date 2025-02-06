@@ -1,4 +1,3 @@
-import { ref } from 'vue';
 import axios from 'axios';
 
 // 【async必須】sleep(ms)用
@@ -7,8 +6,8 @@ const sleep = (time) => new Promise((resolve) => setTimeout(resolve, time));
 // 送信ボタン処理
 export async function onSend(urlVar, jsonVar) {
     // 変数宣言
-    let len = 0, temp_data = [];
-    const api_url = 'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog', size = 20, end_id = ref('');
+    let len = 0, temp_data = [], end_id = '';
+    const api_url = 'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog', size = 20;
 
     for (let loop = 0; ; loop++) {
         if (len === size || loop === 0) {
@@ -33,7 +32,7 @@ export async function onSend(urlVar, jsonVar) {
                     size: size,
                     real_gacha_type: urlVar.real_gacha_type,
                     // 次ページ移行用
-                    end_id: end_id.value
+                    end_id: end_id
                 },
             });
 
@@ -49,7 +48,7 @@ export async function onSend(urlVar, jsonVar) {
                 assignData(response);
             } else {
                 assignData(response);
-                end_id.value = jsonVar.data[jsonVar.data.length - 1].id;
+                end_id = jsonVar.data[jsonVar.data.length - 1].id;
             }
             // 画面表示用
             jsonVar.idx += response.data.data.list.length;

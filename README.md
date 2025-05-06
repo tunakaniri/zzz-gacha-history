@@ -1,4 +1,5 @@
 # zzz-gacha-history
+[![Crowdin](https://badges.crowdin.net/zzz-gacha-history/localized.svg)](https://crowdin.com/project/zzz-gacha-history) <sup>(By Crowdin)</sup>
 
 [セットアップ方法](../../wiki/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%A7%E3%82%82%E7%B0%A1%E5%8D%98%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%81)
 

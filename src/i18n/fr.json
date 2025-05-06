@@ -1,0 +1,39 @@
+{
+  "game": {
+    "channel": {
+      "all": "Tous les canaux",
+      "bangboo": "Canal de Bangbous",
+      "exclusive": "Canal exclusif",
+      "stable": "Canal stable",
+      "type": "Type de canal",
+      "w-engine": "Canal de moteurs-amplis"
+    },
+    "gacha": "Recherche de signal",
+    "gachaDetails": "Détails",
+    "gachaHistory": "Historique de recherche",
+    "gachaTime": "Date de la recherche",
+    "rank": "rang",
+    "server": "Serveur",
+    "signalList": "Signal",
+    "signalType": "Type de signal",
+    "title": "Zenless Zone Zero"
+  },
+  "label": {
+    "submit": "Envoyer"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "Le authkey a expiré. Veuillez retourner à l'écran du jeu, ouvrir l'écran {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) et récupérer de nouveau l'authkey."
+    },
+    "footer": "Cet outil n’est pas lié à {mi}, {br}{cog} ni à {hyv}, et est un outil {unOfficial}. {br}De plus, les données saisies seront temporairement {sendProxy} afin d’obtenir les informations du gacha.",
+    "prefix": {
+      "error": "Erreur:"
+    },
+    "sendProxy": "envoyées temporairement au serveur proxy du fournisseur de l’outil",
+    "unOfficial": "non officiel"
+  },
+  "meta": {
+    "description": "Vous pouvez consulter l'{gameGachaHistory} de {gameTitle}.",
+    "title": "{gameGachaHistory} {gameTitle}"
+  }
+}

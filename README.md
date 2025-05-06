@@ -1,6 +1,10 @@
-# zzz-gacha-history
+# zzz-gacha-history(For GitHub Pages)
 
-[セットアップ方法](../../wiki/%E5%88%9D%E3%82%81%E3%81%A6%E3%81%A7%E3%82%82%E7%B0%A1%E5%8D%98%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97%EF%BC%81)
+[ProxyServer Sourcecode](../../../zzz-gacha-history-proxy)
+
+### Changes from the master branch
+- axios target URL (API server/proxy server)
+- Notes text in footer
 
 This template should help get you started developing with Vue 3 in Vite.
 

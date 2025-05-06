@@ -1,0 +1,38 @@
+{
+  "game": {
+    "channel": {
+      "all": "Semua FM",
+      "bangboo": "FM Bangboo",
+      "exclusive": "FM Eksklusif",
+      "stable": "FM Stabil",
+      "type": "Tipe FM",
+      "w-engine": "FM W-Engine"
+    },
+    "gacha": "Cari FM",
+    "gachaDetails": "Detail",
+    "gachaHistory": "Riwayat Pencarian",
+    "gachaTime": "Waktu Pencarian",
+    "rank": "Tier",
+    "server": "Server",
+    "signalList": "Sinyal",
+    "signalType": "Tipe Sinyal",
+    "title": "Zenless Zone Zero"
+  },
+  "label": {
+    "submit": "Kirim"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "authkey telah kedaluwarsa. Silakan kembali ke layar permainan, buka layar {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}), lalu ambil kembali authkey."
+    },
+    "footer": "Alat ini tidak terkait dengan {mi}, {br}{cog}, dan {hyv}, dan merupakan alat {unOfficial}. {br} Selain itu, konten yang dimasukkan tidak akan dikirim ke penyedia alat.",
+    "prefix": {
+      "error": "Kesalahan:"
+    },
+    "unOfficial": "tidak resmi"
+  },
+  "meta": {
+    "description": "Anda dapat memeriksa {gameGachaHistory} dari {gameTitle}.",
+    "title": "{gameGachaHistory} {gameTitle}"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "game": {
+    "channel": {
+      "all": "全频段",
+      "bangboo": "邦布频段",
+      "exclusive": "独家频段",
+      "stable": "常驻频段",
+      "type": "频段类型",
+      "w-engine": "音擎频段"
+    },
+    "gacha": "调频",
+    "gachaDetails": "详情",
+    "gachaHistory": "调频记录",
+    "gachaTime": "调频时间",
+    "rank": "级",
+    "server": "服务器",
+    "signalList": "信号列表",
+    "signalType": "信号类型",
+    "title": "绝区零"
+  },
+  "label": {
+    "submit": "发送"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "authkey已过期。请返回游戏画面，打开{gameGachaHistory}页面（{gameGacha}>{gameGachaDetails}>{gameGachaHistory}），重新获取authkey。"
+    },
+    "footer": "这个工具与{mi}、{br}{cog}和{hyv}无关，是一个{unOfficial}工具。{br}此外，输入的内容不会发送给工具提供者。",
+    "prefix": {
+      "error": "错误:"
+    },
+    "unOfficial": "非官方"
+  },
+  "meta": {
+    "description": "可以查看{gameTitle}的{gameGachaHistory}。",
+    "title": "{gameTitle} {gameGachaHistory}"
+  }
+}

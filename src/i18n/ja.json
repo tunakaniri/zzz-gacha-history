@@ -1,0 +1,38 @@
+{
+  "game": {
+    "channel": {
+      "all": "全チャンネル",
+      "bangboo": "ボンプチャンネル",
+      "exclusive": "独占チャンネル",
+      "stable": "常設チャンネル",
+      "type": "チャンネルタイプ",
+      "w-engine": "音動機チャンネル"
+    },
+    "gacha": "変調",
+    "gachaDetails": "詳細",
+    "gachaHistory": "変調履歴",
+    "gachaTime": "変調時間",
+    "rank": "級",
+    "server": "サーバー",
+    "signalList": "シグナル一覧",
+    "signalType": "シグナルタイプ",
+    "title": "ゼンレスゾーンゼロ"
+  },
+  "label": {
+    "submit": "送信"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "authkeyの有効期限が切れています。一度ゲーム画面に戻り{gameGachaHistory}画面({gameGacha}>{gameGachaDetails}>{gameGachaHistory})を開いて、再度authkeyを取得してください。"
+    },
+    "footer": "このツールは{mi}、{br}{cog}および{hyv}とは関係ない{unOfficial}ツールです。{br}また、入力された内容はツール提供者には送信されません。",
+    "prefix": {
+      "error": "エラー:"
+    },
+    "unOfficial": "非公式"
+  },
+  "meta": {
+    "description": "{gameTitle}の{gameGachaHistory}を確認できます。",
+    "title": "{gameTitle}{gameGachaHistory}"
+  }
+}

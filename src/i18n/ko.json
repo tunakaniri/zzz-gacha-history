@@ -1,0 +1,38 @@
+{
+  "game": {
+    "channel": {
+      "all": "모든 채널",
+      "bangboo": "「Bangboo」 채널",
+      "exclusive": "독점 채널",
+      "stable": "일반 채널",
+      "type": "채널 유형",
+      "w-engine": "W-엔진 채널"
+    },
+    "gacha": "변조",
+    "gachaDetails": "상세",
+    "gachaHistory": "변조 기록",
+    "gachaTime": "변조 시간",
+    "rank": "급",
+    "server": "서버",
+    "signalList": "신호 목록",
+    "signalType": "신호 유형",
+    "title": "젠레스 존 제로"
+  },
+  "label": {
+    "submit": "보내기"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "authkey의 유효 기간이 만료되었습니다. 게임 화면으로 돌아가 {gameGachaHistory} 화면({gameGacha} > {gameGachaDetails} > {gameGachaHistory})을 열고 다시 authkey를 가져와 주세요."
+    },
+    "footer": "이 도구는 {mi}, {br}{cog}, {hyv}와 관련이 없으며 {unOfficial} 도구입니다. {br} 또한 입력된 내용은 도구 제공자에게 전송되지 않습니다.",
+    "prefix": {
+      "error": "오류:"
+    },
+    "unOfficial": "비공식"
+  },
+  "meta": {
+    "description": "{gameTitle}의 {gameGachaHistory}를 확인할 수 있습니다.",
+    "title": "{gameTitle} {gameGachaHistory}"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "game": {
+    "channel": {
+      "all": "All Channels",
+      "bangboo": "Bangboo Channel",
+      "exclusive": "Exclusive Channel",
+      "stable": "Stable Channel",
+      "type": "ประเภท Channel",
+      "w-engine": "W-Engine Channel"
+    },
+    "gacha": "ปรับความถี่",
+    "gachaDetails": "รายละเอียด",
+    "gachaHistory": "บันทึกการปรับความถี่",
+    "gachaTime": "เวลาการปรับความถี่",
+    "rank": "แรงก์",
+    "server": "เซิร์ฟเวอร์",
+    "signalList": "รายการสัญญาณ",
+    "signalType": "ประเภทสัญญาณ",
+    "title": "Zenless Zone Zero"
+  },
+  "label": {
+    "submit": "ส่ง"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "authkey หมดอายุแล้ว กรุณากลับไปที่หน้าจอเกม เปิดหน้าจอ {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) แล้วรับ authkey อีกครั้ง"
+    },
+    "footer": "เครื่องมือนี้ไม่เกี่ยวข้องกับ {mi}, {br}{cog} และ {hyv} และเป็นเครื่องมือ {unOfficial} {br} นอกจากนี้ เนื้อหาที่กรอกจะไม่ถูกส่งไปยังผู้ให้บริการเครื่องมือ",
+    "prefix": {
+      "error": "ข้อผิดพลาด:"
+    },
+    "unOfficial": "ไม่เป็นทางการ"
+  },
+  "meta": {
+    "description": "คุณสามารถตรวจสอบ{gameGachaHistory}ของ{gameTitle}ได้",
+    "title": "{gameGachaHistory} {gameTitle}"
+  }
+}

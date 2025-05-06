@@ -1,0 +1,38 @@
+{
+  "game": {
+    "channel": {
+      "all": "Tất cả các kênh",
+      "bangboo": "Kênh Bangboo",
+      "exclusive": "Kênh Độc Quyền",
+      "stable": "Kênh Thường Trực",
+      "type": "Loại Kênh",
+      "w-engine": "Kênh W-Engine"
+    },
+    "gacha": "Chỉnh Kênh",
+    "gachaDetails": "Chi Tiết",
+    "gachaHistory": "Lịch Sử Chỉnh Kênh",
+    "gachaTime": "Thời Gian Chỉnh Kênh",
+    "rank": "Cấp",
+    "server": "Máy chủ",
+    "signalList": "Tín Hiệu",
+    "signalType": "Loại Tín Hiệu",
+    "title": "Zenless Zone Zero"
+  },
+  "label": {
+    "submit": "Gửi"
+  },
+  "message": {
+    "error": {
+      "authkeyTimeOut": "authkey đã hết hạn. Vui lòng quay lại màn hình trò chơi, mở màn hình {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) và lấy lại authkey."
+    },
+    "footer": "Công cụ này không liên quan đến {mi}, {br}{cog} và {hyv}, và là một công cụ {unOfficial}. {br} Hơn nữa, nội dung đã nhập sẽ không được gửi đến nhà cung cấp công cụ.",
+    "prefix": {
+      "error": "Lỗi:"
+    },
+    "unOfficial": "không chính thức"
+  },
+  "meta": {
+    "description": "Bạn có thể kiểm tra {gameGachaHistory} của {gameTitle}.",
+    "title": "{gameGachaHistory} {gameTitle}"
+  }
+}

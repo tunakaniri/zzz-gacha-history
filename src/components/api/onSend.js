@@ -9,7 +9,7 @@ export async function onSend(urlVar, jsonVar, isFirst) {
   let len = 0,
     temp_data = [],
     end_id = ''
-  const api_url = 'https://zzz-gacha-history-proxy.tunakaniri.workers.dev', //プロキシサーバーURL
+  const api_url = 'https://proxy.zzz.tunakaniri.com', //プロキシサーバーURL
     size = 20
 
   for (let loop = 0; len === size || loop === 0; loop++) {

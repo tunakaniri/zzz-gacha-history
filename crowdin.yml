@@ -1,2 +1,5 @@
 bundles:
   - 6
+files:
+  - source: /src/i18n/ja.json
+    translation: /src/i18n/%two_letters_code%.json

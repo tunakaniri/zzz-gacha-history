@@ -1,4 +1,5 @@
 # zzz-gacha-history(For GitHub Pages)
+[![Crowdin](https://badges.crowdin.net/zzz-gacha-history_gh-pages/localized.svg)](https://crowdin.com/project/zzz-gacha-history_gh-pages) <sup>(By Crowdin)</sup>
 
 [ProxyServer Sourcecode](../../../zzz-gacha-history-proxy)
 

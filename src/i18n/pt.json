@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "O authkey expirou. Volte para a tela do jogo, abra a tela de {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) e obtenha o authkey novamente."
+      "authkeyTimeOut": "O authkey expirou. Volte para a tela do jogo, abra a tela de {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) e obtenha o authkey novamente.",
+      "invalidAuthkey": "A authkey inserida parece conter valores inválidos. Pedimos desculpa, por favor introduza-a novamente."
     },
     "footer": "Esta ferramenta não está relacionada com {mi}, {br}{cog} ou {hyv}, sendo uma ferramenta {unOfficial}. {br}Além disso, os dados introduzidos são temporariamente {sendProxy} para obter os dados do gacha.",
     "prefix": {

@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "authkey đã hết hạn. Vui lòng quay lại màn hình trò chơi, mở màn hình {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) và lấy lại authkey."
+      "authkeyTimeOut": "authkey đã hết hạn. Vui lòng quay lại màn hình trò chơi, mở màn hình {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) và lấy lại authkey.",
+      "invalidAuthkey": "authkey bạn đã nhập có vẻ chứa giá trị không hợp lệ. Rất tiếc, vui lòng nhập lại."
     },
     "footer": "Công cụ này không liên quan đến {mi}, {br}{cog} và {hyv}, và là một công cụ {unOfficial}. {br}Ngoài ra, dữ liệu nhập vào sẽ tạm thời được {sendProxy} để truy xuất dữ liệu gacha.",
     "prefix": {

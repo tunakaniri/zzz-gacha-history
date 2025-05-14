@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "authkey의 유효 기간이 만료되었습니다. 게임 화면으로 돌아가 {gameGachaHistory} 화면({gameGacha} > {gameGachaDetails} > {gameGachaHistory})을 열고 다시 authkey를 가져와 주세요."
+      "authkeyTimeOut": "authkey의 유효 기간이 만료되었습니다. 게임 화면으로 돌아가 {gameGachaHistory} 화면({gameGacha} > {gameGachaDetails} > {gameGachaHistory})을 열고 다시 authkey를 가져와 주세요.",
+      "invalidAuthkey": "입력한 authkey에 유효하지 않은 값이 포함된 것 같습니다. 죄송하지만 다시 입력해 주세요."
     },
     "footer": "이 도구는 {mi}, {br}{cog}, {hyv}와 관련 없는 {unOfficial} 도구입니다. {br}또한, 가챠 데이터를 가져오기 위해 입력된 내용은 일시적으로 {sendProxy}됩니다.",
     "prefix": {

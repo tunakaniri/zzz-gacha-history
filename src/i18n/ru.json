@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "Срок действия authkey истёк. Пожалуйста, вернитесь на экран игры, откройте экран {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) и получите authkey заново."
+      "authkeyTimeOut": "Срок действия authkey истёк. Пожалуйста, вернитесь на экран игры, откройте экран {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) и получите authkey заново.",
+      "invalidAuthkey": "Введённый authkey содержит недопустимые значения. Пожалуйста, введите его снова."
     },
     "footer": "Этот инструмент не связан с {mi}, {br}{cog} и {hyv} и является {unOfficial} инструментом. {br}Кроме того, введённые данные временно {sendProxy} для получения информации о гача.",
     "prefix": {

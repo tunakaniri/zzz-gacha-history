@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "authkey หมดอายุแล้ว กรุณากลับไปที่หน้าจอเกม เปิดหน้าจอ {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) แล้วรับ authkey อีกครั้ง"
+      "authkeyTimeOut": "authkey หมดอายุแล้ว กรุณากลับไปที่หน้าจอเกม เปิดหน้าจอ {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) แล้วรับ authkey อีกครั้ง",
+      "invalidAuthkey": "ดูเหมือนว่า authkey ที่ป้อนไม่ถูกต้อง ขออภัย กรุณากรอกใหม่อีกครั้ง"
     },
     "footer": "เครื่องมือนี้ไม่เกี่ยวข้องกับ {mi}, {br}{cog} และ {hyv} และเป็นเครื่องมือ{unOfficial} {br}นอกจากนี้ ข้อมูลที่ป้อนจะถูก{sendProxy}ชั่วคราวเพื่อดึงข้อมูลกาชา",
     "prefix": {

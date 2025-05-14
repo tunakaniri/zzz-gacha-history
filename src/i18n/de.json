@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "Der authkey ist abgelaufen. Bitte gehe zurück zum Spielbildschirm, öffne den {gameGachaHistory}-Bildschirm ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) und hole dir den authkey erneut."
+      "authkeyTimeOut": "Der authkey ist abgelaufen. Bitte gehe zurück zum Spielbildschirm, öffne den {gameGachaHistory}-Bildschirm ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) und hole dir den authkey erneut.",
+      "invalidAuthkey": "Der eingegebene authkey scheint ungültige Werte zu enthalten. Bitte geben Sie ihn erneut ein."
     },
     "footer": "Dieses Tool steht in keiner Verbindung zu {mi}, {br}{cog} oder {hyv} und ist ein {unOfficial} Tool. {br}Zudem werden die eingegebenen Daten vorübergehend {sendProxy}, um Gacha-Daten abzurufen.",
     "prefix": {

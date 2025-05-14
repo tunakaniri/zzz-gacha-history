@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "authkey已過期。請返回遊戲畫面，開啟{gameGachaHistory}畫面（{gameGacha}>{gameGachaDetails}>{gameGachaHistory}），重新取得authkey。"
+      "authkeyTimeOut": "authkey已過期。請返回遊戲畫面，開啟{gameGachaHistory}畫面（{gameGacha}>{gameGachaDetails}>{gameGachaHistory}），重新取得authkey。",
+      "invalidAuthkey": "輸入的 authkey 似乎包含無效的值。很抱歉，請重新輸入。"
     },
     "footer": "此工具與{mi}、{br}{cog}和{hyv}無關，是一個{unOfficial}工具。{br}此外，為了取得抽卡資料，輸入的內容會暫時{sendProxy}。",
     "prefix": {

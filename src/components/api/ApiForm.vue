@@ -93,6 +93,13 @@ async function onSendPre() {
   urlVar.authkey = decodeURIComponent(input_authkey.value)
   // データリセット
   resetJsonVar()
+  // authkeyに不正な値が含まれていないか検証(gh-pages版のみ)
+  if (!/^[a-zA-Z0-9+/]+$/.test(urlVar.authkey)) {
+    jsonVar.error_message_t = 'message.error.invalidAuthkey'
+    // 処理中フラグ削除
+    isProsessing.value = false
+    return 1
+  }
   // 言語設定
   urlVar.lang = locale.value
 

@@ -1,5 +1,5 @@
 import { createI18n } from 'vue-i18n'
-import { setDayJSLocale } from '@/components/i18n/dayjs.js'
+import { setDayJSLocale } from './dayjs.js'
 import Cookies from 'js-cookie'
 
 // export const SUPPORT_LOCALES = ['en', 'ja']

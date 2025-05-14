@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "El authkey ha caducado. Vuelve a la pantalla del juego, abre la pantalla de {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) y vuelve a obtener el authkey."
+      "authkeyTimeOut": "El authkey ha caducado. Vuelve a la pantalla del juego, abre la pantalla de {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) y vuelve a obtener el authkey.",
+      "invalidAuthkey": "Parece que el authkey introducido contiene valores no válidos. Lo sentimos, por favor, introdúzcalo de nuevo."
     },
     "footer": "Esta herramienta no está relacionada con {mi}, {br}{cog} ni {hyv}, y es una herramienta {unOfficial}. {br}Además, los datos introducidos se {sendProxy} temporalmente para obtener información del gacha.",
     "prefix": {

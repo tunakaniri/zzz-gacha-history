@@ -23,7 +23,8 @@
   },
   "message": {
     "error": {
-      "authkeyTimeOut": "authkeyの有効期限が切れています。一度ゲーム画面に戻り{gameGachaHistory}画面({gameGacha}>{gameGachaDetails}>{gameGachaHistory})を開いて、再度authkeyを取得してください。"
+      "authkeyTimeOut": "authkeyの有効期限が切れています。一度ゲーム画面に戻り{gameGachaHistory}画面({gameGacha}>{gameGachaDetails}>{gameGachaHistory})を開いて、再度authkeyを取得してください。",
+      "invalidAuthkey": "入力されたauthkeyに不正な値が含まれているようです。申し訳ありませんが、もう一度入力してください。"
     },
     "footer": "このツールは{mi}、{br}{cog}および{hyv}とは関係ない{unOfficial}ツールです。{br}また、入力された内容はガチャデータを取得するため、一時的に{sendProxy}されます。",
     "prefix": {

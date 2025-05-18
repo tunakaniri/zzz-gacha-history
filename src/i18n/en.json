@@ -19,7 +19,14 @@
     "title": "Zenless Zone Zero"
   },
   "label": {
-    "submit": "Send"
+    "fileData_2": "data_2ファイル",
+    "getAuthkeyDirectInput": "手動で入力",
+    "getAuthkeyFromFile": "data_2ファイルから抽出",
+    "lang": "Language",
+    "path": "パス:",
+    "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
+    "submit": "Send",
+    "uploadHere": "Upload HERE"
   },
   "message": {
     "error": {

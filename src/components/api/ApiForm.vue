@@ -4,6 +4,7 @@ import { useI18n } from 'vue-i18n'
 import { reRenderKey } from '../i18n/dayjs'
 import dayjs from '../i18n/dayjs'
 import { onSend } from './onSend'
+import GetAuthkey from '../util/authkeyFromFile.vue'
 
 // onSend用変数宣言
 const urlVar = reactive({
@@ -66,7 +67,8 @@ const input_authkey = ref(''),
   isProsessing = ref(false),
   isFirst = ref(true),
   authkey_form_type = ref('password'),
-  visibility = ref('visibility')
+  visibility = ref('visibility'),
+  typeGetAuthkey = ref('file')
 
 // jsonVarの初期化
 function resetJsonVar() {
@@ -147,88 +149,94 @@ function toggleShow() {
 </script>
 
 <template>
-  <div class="app-container">
-    <!-- ステータス表示 -->
-    <p v-if="jsonVar.success_message" class="success">{{ jsonVar.success_message }}</p>
-    <p v-if="jsonVar.error_message" class="error">
-      {{ $t('message.prefix.error') }} {{ jsonVar.error_message }}
-    </p>
-    <p v-if="jsonVar.error_message_t" class="error">
-      {{ $t('message.prefix.error') }}
-      {{
-        $t(jsonVar.error_message_t, {
-          gameGacha: $t('game.gacha'),
-          gameGachaDetails: $t('game.gachaDetails'),
-          gameGachaHistory: $t('game.gachaHistory'),
-        })
-      }}
-    </p>
-    <!-- 入力部 -->
-    <p>
-      ※AuthKeyは「&lt;ZZZInstallDirectory&gt;/ZenlessZoneZero_Data/webCaches/&lt;VERSION&gt;/Cache/Cache_Data/data2」に記載された最新(一番下)のものを使用してください。(<a
-        href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.hexeditor"
-        >Hex Editor</a
-      >等のバイナリエディタが必要)<br />検索用ワード(正規表現)「gacha_record/.*?authkey=」
-    </p>
-    <label for="authkey" class="form-required">AuthKey</label>
-    <div class="input">
-      <input
-        v-model.trim="input_authkey"
-        :type="authkey_form_type"
-        id="authkey"
-        name="authkey"
-        autocomplete="authkey"
-        class="password"
-        autofocus
-        required
-      />
-      <button class="material-symbols-outlined button-toggle" @click="toggleShow">
-        {{ visibility }}
-      </button>
+  <!-- ステータス表示 -->
+  <p v-if="jsonVar.success_message" class="success">{{ jsonVar.success_message }}</p>
+  <p v-if="jsonVar.error_message" class="error">
+    {{ $t('message.prefix.error') }} {{ jsonVar.error_message }}
+  </p>
+  <p v-if="jsonVar.error_message_t" class="error">
+    {{ $t('message.prefix.error') }}
+    {{
+      $t(jsonVar.error_message_t, {
+        gameGacha: $t('game.gacha'),
+        gameGachaDetails: $t('game.gachaDetails'),
+        gameGachaHistory: $t('game.gachaHistory'),
+      })
+    }}
+  </p>
+
+  <div name="authkey">
+    <!-- authekey入力方法選択 -->
+    <label for="selectTypeGetAuthkey" class="form-required">{{
+      $t('label.selectGetAuthkeyMethod')
+      }}</label>
+    <div name="selectTypeGetAuthkey">
+      <input type="radio" id="file" value="file" v-model="typeGetAuthkey" />
+      <label for="file"> {{ $t('label.getAuthkeyFromFile') }}</label><br />
+      <input type="radio" id="manual" value="manual" v-model="typeGetAuthkey" />
+      <label for="manual"> {{ $t('label.getAuthkeyDirectInput') }}</label>
     </div>
 
-    <div>
-      <label for="gachachannel" class="form-required">{{ $t('game.channel.type') }}</label>
-      <div class="form">
-        <select v-model.number="input_real_gacha_type" id="gachachannel">
-          <option v-for="(value, key) in channelList" :key="key" :value="key">
-            {{ $t(value) }}
-          </option>
-        </select>
+    <div v-if="typeGetAuthkey === 'file'">
+      <!-- data_2にauthkeyがあれば代入 -->
+      <GetAuthkey @authkey-found="(data2Authkey) => (input_authkey = data2Authkey)" />
+    </div>
+
+    <div v-if="typeGetAuthkey === 'manual'">
+      <!-- 入力部 -->
+      <label for="authkey">AuthKey</label>
+      <div class="input">
+        <input v-model.trim="input_authkey" :type="authkey_form_type" id="authkey" name="authkey" autocomplete="authkey"
+          class="password" autofocus required />
+        <button class="material-symbols-outlined button-toggle" @click="toggleShow">
+          {{ visibility }}
+        </button>
       </div>
     </div>
-    <button @click="onSendPre" :disabled="isButtonDisable">{{ $t('label.submit') }}</button>
-
-    <!-- 表示部 -->
-    <p v-if="jsonVar.uid !== 0">
-      UID: {{ jsonVar.uid }}, {{ $t('game.server') }}: {{ serverList[jsonVar.region] }}
-    </p>
-    <table>
-      <thead>
-        <tr>
-          <th>idx</th>
-          <th>{{ $t('game.rank') }}</th>
-          <th>{{ $t('game.signalList') }}</th>
-          <th>{{ $t('game.signalType') }}</th>
-          <th v-if="input_real_gacha_type === 0">{{ $t('game.channel.type') }}</th>
-          <th>{{ $t('game.gachaTime') }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in jsonVar.data" :key="item.index">
-          <td>{{ item.index }}</td>
-          <td :style="{ color: rankLabel[item.rank_type].color }">
-            {{ rankLabel[item.rank_type].rank }}
-          </td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.item_type }}</td>
-          <td v-if="input_real_gacha_type === 0">
-            {{ $t(channelList[item.gacha_type]) }}
-          </td>
-          <!-- 【最終手段】更新を手動で行わないといけないので、言語変更後に変更されるkeyを配置 -->
-          <td :key="reRenderKey">{{ formatDate(item.time) }}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
+
+  <label for="gachachannel">{{ $t('game.channel.type') }}</label>
+  <div class="form">
+    <select v-model.number="input_real_gacha_type" id="gachachannel">
+      <option v-for="(value, key) in channelList" :key="key" :value="key">
+        {{ $t(value) }}
+      </option>
+    </select>
+  </div>
+
+  <button @click="onSendPre" :disabled="isButtonDisable" style="margin: 5px auto 10px">
+    {{ $t('label.submit') }}
+  </button>
+
+  <!-- 表示部 -->
+  <p v-if="jsonVar.uid !== 0">
+    UID: {{ jsonVar.uid }}, {{ $t('game.server') }}: {{ serverList[jsonVar.region] }}
+  </p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>{{ $t('game.rank') }}</th>
+        <th>{{ $t('game.signalList') }}</th>
+        <th>{{ $t('game.signalType') }}</th>
+        <th v-if="input_real_gacha_type === 0">{{ $t('game.channel.type') }}</th>
+        <th>{{ $t('game.gachaTime') }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="item in jsonVar.data" :key="item.index">
+        <td>{{ item.index }}</td>
+        <td :style="{ color: rankLabel[item.rank_type].color }">
+          {{ rankLabel[item.rank_type].rank }}
+        </td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.item_type }}</td>
+        <td v-if="input_real_gacha_type === 0">
+          {{ $t(channelList[item.gacha_type]) }}
+        </td>
+        <!-- 【最終手段】更新を手動で行わないといけないので、言語変更後に変更されるkeyを配置 -->
+        <td :key="reRenderKey">{{ formatDate(item.time) }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>

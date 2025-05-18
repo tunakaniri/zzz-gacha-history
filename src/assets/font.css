@@ -1,0 +1,48 @@
+:lang(zh-cn) {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+:lang(zh-tw) {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+:lang(ko) {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+:lang(ja) {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+:lang(th) {
+  font-family: 'Noto Sans Thai Looped', sans-serif;
+  /* font-weight: 400; */
+  font-style: normal;
+}
+
+:lang(en),
+:lang(es),
+:lang(ru),
+:lang(vi),
+:lang(id),
+:lang(fr),
+:lang(de),
+:lang(pt) {
+  font-family: 'Noto Sans', sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: 400; */
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}

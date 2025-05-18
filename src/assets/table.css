@@ -1,0 +1,19 @@
+/* 表 */
+table {
+  border-collapse: collapse;
+  /* width: 100%; */
+  border: 3px solid black;
+}
+
+th {
+  border: 1px solid black;
+  border-bottom: 4px double black;
+  padding: 8px;
+  text-align: center;
+}
+
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}

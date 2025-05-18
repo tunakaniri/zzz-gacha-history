@@ -1,0 +1,14 @@
+.dropzone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(230, 240, 255, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px dashed #66f;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}

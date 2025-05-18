@@ -46,15 +46,19 @@ const footerContent = computed(() => {
 </script>
 
 <template>
-  <div style="text-align: right">
-    <LanguageSelector />
-  </div>
+  <header>
+    <div>
+      <p>ZZZ</p>
+    </div>
+    <div style="align-content: center">
+      {{ $t('label.lang') + ': ' }}
+      <LanguageSelector />
+    </div>
+  </header>
 
   <div class="app-container">
     <ApiForm />
   </div>
 
-  <div>
-    <footer v-html="footerContent"></footer>
-  </div>
+  <footer v-html="footerContent"></footer>
 </template>

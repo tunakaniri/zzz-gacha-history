@@ -1,6 +1,6 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
-import { loadLangMessages, langList } from '@/components/i18n/i18n.js'
+import { loadLangMessages, langList } from './i18n.js'
 
 // 現在のロケールを取得
 const { locale } = useI18n()

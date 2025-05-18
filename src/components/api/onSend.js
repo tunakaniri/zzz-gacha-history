@@ -50,6 +50,7 @@ export async function onSend(urlVar, jsonVar, isFirst) {
         assignData(response)
         end_id = response.data.data.list[size - 1].id
       }
+      console.log(response)
       // 画面表示用
       jsonVar.idx += response.data.data.list.length
       // 終了判定用

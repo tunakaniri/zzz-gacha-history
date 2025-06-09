@@ -19,12 +19,12 @@
     "title": "젠레스 존 제로"
   },
   "label": {
-    "fileData_2": "data_2ファイル",
-    "getAuthkeyDirectInput": "手動で入力",
-    "getAuthkeyFromFile": "data_2ファイルから抽出",
+    "fileData_2": "data_2 파일",
+    "getAuthkeyDirectInput": "수동으로 입력",
+    "getAuthkeyFromFile": "data_2 파일에서 추출",
     "lang": "언어",
-    "path": "パス:",
-    "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
+    "path": "경로:",
+    "selectGetAuthkeyMethod": "authKey의 입력 방법을 선택",
     "submit": "보내기",
     "uploadHere": "Upload HERE"
   },

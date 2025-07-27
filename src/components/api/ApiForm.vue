@@ -167,12 +167,12 @@ function toggleShow() {
 
   <div name="authkey">
     <!-- authekey入力方法選択 -->
-    <label for="selectTypeGetAuthkey" class="form-required">{{
-      $t('label.selectGetAuthkeyMethod')
-      }}</label>
     <div name="selectTypeGetAuthkey">
+      <label for="file" class="form-required">{{ $t('label.selectGetAuthkeyMethod') }}</label
+      ><br />
       <input type="radio" id="file" value="file" v-model="typeGetAuthkey" />
-      <label for="file"> {{ $t('label.getAuthkeyFromFile') }}</label><br />
+      <label for="file"> {{ $t('label.getAuthkeyFromFile') }}</label
+      ><br />
       <input type="radio" id="manual" value="manual" v-model="typeGetAuthkey" />
       <label for="manual"> {{ $t('label.getAuthkeyDirectInput') }}</label>
     </div>
@@ -186,8 +186,16 @@ function toggleShow() {
       <!-- 入力部 -->
       <label for="authkey">AuthKey</label>
       <div class="input">
-        <input v-model.trim="input_authkey" :type="authkey_form_type" id="authkey" name="authkey" autocomplete="authkey"
-          class="password" autofocus required />
+        <input
+          v-model.trim="input_authkey"
+          :type="authkey_form_type"
+          id="authkey"
+          name="authkey"
+          autocomplete="authkey"
+          class="password"
+          autofocus
+          required
+        />
         <button class="material-symbols-outlined button-toggle" @click="toggleShow">
           {{ visibility }}
         </button>

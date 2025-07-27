@@ -91,11 +91,12 @@ onBeforeUnmount(() => {
   <div>
     <!-- 通常表示：inputでファイル選択 -->
     <div v-if="!isDragging">
-      <label for="upload">{{ $t('label.fileData_2') }}</label><br />
+      <label for="upload">{{ $t('label.fileData_2') }}</label
+      ><br />
       <label for="upload">
-        <span class="no-select">{{ $t('label.path')
-          }}</span>&lt;ZZZInstallLocation&gt;/ZenlessZoneZero_Data/webCaches/&lt;LatestVersion&gt;/Cache/Cache_Data/data_2
-      </label><br />
+        <span class="no-select">{{ $t('label.path') }}</span
+        >&lt;ZZZInstallLocation&gt;/ZenlessZoneZero_Data/webCaches/&lt;LatestVersion&gt;/Cache/Cache_Data/data_2 </label
+      ><br />
       <label for="upload" class="pseudo-button">{{ $t('label.uploadHere') }}</label>
       <input type="file" id="upload" @change="onFileSelected" />
       <div v-if="selectedFileName">選択されたファイル: {{ selectedFileName }}</div>
@@ -104,7 +105,13 @@ onBeforeUnmount(() => {
     </div>
 
     <!-- ドロップゾーン表示 -->
-    <div v-else class="dropzone" @dragover.prevent="onDragOver" @dragleave.prevent="onDragLeave" @drop.prevent="onDrop">
+    <div
+      v-else
+      class="dropzone"
+      @dragover.prevent="onDragOver"
+      @dragleave.prevent="onDragLeave"
+      @drop.prevent="onDrop"
+    >
       <p>ここに <strong>data_2</strong> ファイルをドロップしてください</p>
     </div>
   </div>

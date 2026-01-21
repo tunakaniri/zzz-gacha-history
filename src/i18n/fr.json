@@ -4,9 +4,11 @@
       "all": "Tous les canaux",
       "bangboo": "Canal de Bangbous",
       "exclusive": "Canal exclusif",
+      "exclusiveRescreening": "Canal rediffusion exclusive",
       "stable": "Canal stable",
       "type": "Type de canal",
-      "w-engine": "Canal de moteurs-amplis"
+      "w-engine": "Canal de moteurs-amplis",
+      "w-engineReverberation": "Canal réverbération de moteur-ampli"
     },
     "gacha": "Recherche de signal",
     "gachaDetails": "Détails",

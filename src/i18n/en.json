@@ -4,9 +4,11 @@
       "all": "All Channels",
       "bangboo": "Bangboo Channel",
       "exclusive": "Exclusive Channel",
+      "exclusiveRescreening": "Exclusive Rescreening Channel",
       "stable": "Stable Channel",
       "type": "Channel Type",
-      "w-engine": "W-Engine Channel"
+      "w-engine": "W-Engine Channel",
+      "w-engineReverberation": "W-Engine Reverberation Channel"
     },
     "gacha": "Signal Search",
     "gachaDetails": "Details",

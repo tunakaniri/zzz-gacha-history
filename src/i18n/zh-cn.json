@@ -4,9 +4,11 @@
       "all": "全频段",
       "bangboo": "邦布频段",
       "exclusive": "独家频段",
+      "exclusiveRescreening": "独家重映频段",
       "stable": "常驻频段",
       "type": "频段类型",
-      "w-engine": "音擎频段"
+      "w-engine": "音擎频段",
+      "w-engineReverberation": "音擎回响频段"
     },
     "gacha": "调频",
     "gachaDetails": "详情",

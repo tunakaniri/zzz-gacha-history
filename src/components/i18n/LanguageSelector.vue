@@ -1,15 +1,15 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
-import { loadLangMessages, langList } from './i18n.js'
+  import { useI18n } from 'vue-i18n'
+  import { loadLangMessages, langList } from './i18n.js'
 
-// 現在のロケールを取得
-const { locale } = useI18n()
+  // 現在のロケールを取得
+  const { locale } = useI18n()
 
-// 言語変更
-async function changeLang(event) {
-  const selectedLang = event.target.value
-  await loadLangMessages(selectedLang) // 言語を切り替え
-}
+  // 言語変更
+  async function changeLang(event) {
+    const selectedLang = event.target.value
+    await loadLangMessages(selectedLang) // 言語を切り替え
+  }
 </script>
 
 <template>

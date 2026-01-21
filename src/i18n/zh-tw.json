@@ -4,9 +4,11 @@
       "all": "全頻道",
       "bangboo": "邦布頻道",
       "exclusive": "獨家頻道",
+      "exclusiveRescreening": "獨家重映頻道",
       "stable": "常駐頻道",
       "type": "頻道類型",
-      "w-engine": "音擎頻道"
+      "w-engine": "音擎頻道",
+      "w-engineReverberation": "音擎迴響頻道"
     },
     "gacha": "調頻",
     "gachaDetails": "詳情",

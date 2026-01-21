@@ -4,9 +4,11 @@
       "all": "모든 채널",
       "bangboo": "「Bangboo」 채널",
       "exclusive": "독점 채널",
+      "exclusiveRescreening": " 독점 재개봉 채널",
       "stable": "일반 채널",
       "type": "채널 유형",
-      "w-engine": "W-엔진 채널"
+      "w-engine": "W-엔진 채널",
+      "w-engineReverberation": "W-엔진의 메아리 채널"
     },
     "gacha": "변조",
     "gachaDetails": "상세",

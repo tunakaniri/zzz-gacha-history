@@ -1,45 +1,47 @@
 {
-  "game": {
-    "channel": {
-      "all": "All Channels",
-      "bangboo": "Bangboo Channel",
-      "exclusive": "Exclusive Channel",
-      "stable": "Stable Channel",
-      "type": "Channel Type",
-      "w-engine": "W-Engine Channel"
+    "game": {
+        "channel": {
+            "all": "All Channels",
+            "bangboo": "Bangboo Channel",
+            "exclusive": "Exclusive Channel",
+            "exclusiveRescreening": "Exclusive Rescreening Channel",
+            "stable": "Stable Channel",
+            "type": "Channel Type",
+            "w-engine": "W-Engine Channel",
+            "w-engineReverberation": "W-Engine Reverberation Channel"
+        },
+        "gacha": "Signal Search",
+        "gachaDetails": "Details",
+        "gachaHistory": "Search History",
+        "gachaTime": "Search Time",
+        "rank": "Rank",
+        "server": "Server",
+        "signalList": "Signal",
+        "signalType": "Signal Type",
+        "title": "Zenless Zone Zero"
     },
-    "gacha": "Signal Search",
-    "gachaDetails": "Details",
-    "gachaHistory": "Search History",
-    "gachaTime": "Search Time",
-    "rank": "Rank",
-    "server": "Server",
-    "signalList": "Signal",
-    "signalType": "Signal Type",
-    "title": "Zenless Zone Zero"
-  },
-  "label": {
-    "fileData_2": "data_2ファイル",
-    "getAuthkeyDirectInput": "手動で入力",
-    "getAuthkeyFromFile": "data_2ファイルから抽出",
-    "lang": "Language",
-    "path": "パス:",
-    "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
-    "submit": "Send",
-    "uploadHere": "Upload HERE"
-  },
-  "message": {
-    "error": {
-      "authkeyTimeOut": "The authkey has expired. Please return to the game screen, open the {gameGachaHistory} screen ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}), and retrieve the authkey again."
+    "label": {
+        "fileData_2": "data_2ファイル",
+        "getAuthkeyDirectInput": "手動で入力",
+        "getAuthkeyFromFile": "data_2ファイルから抽出",
+        "lang": "Language",
+        "path": "パス:",
+        "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
+        "submit": "Send",
+        "uploadHere": "Upload HERE"
     },
-    "footer": "This tool is unrelated to {mi}, {br}{cog}, and {hyv}, and is an {unOfficial} tool. {br} Furthermore, the entered content will not be sent to the tool provider.",
-    "prefix": {
-      "error": "Error:"
+    "message": {
+        "error": {
+            "authkeyTimeOut": "The authkey has expired. Please return to the game screen, open the {gameGachaHistory} screen ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}), and retrieve the authkey again."
+        },
+        "footer": "This tool is unrelated to {mi}, {br}{cog}, and {hyv}, and is an {unOfficial} tool. {br} Furthermore, the entered content will not be sent to the tool provider.",
+        "prefix": {
+            "error": "Error:"
+        },
+        "unOfficial": "unofficial"
     },
-    "unOfficial": "unofficial"
-  },
-  "meta": {
-    "description": "You can check the {gameGachaHistory} of {gameTitle}.",
-    "title": "{gameTitle} {gameGachaHistory}"
-  }
+    "meta": {
+        "description": "You can check the {gameGachaHistory} of {gameTitle}.",
+        "title": "{gameTitle} {gameGachaHistory}"
+    }
 }

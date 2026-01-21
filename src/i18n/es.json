@@ -4,9 +4,11 @@
       "all": "Todos los canales",
       "bangboo": "Canal Bangbú",
       "exclusive": "Canal Exclusivo",
+      "exclusiveRescreening": "Canal Reposición exclusiva",
       "stable": "Canal Estable",
       "type": "Canal",
-      "w-engine": "Canal Amplificado"
+      "w-engine": "Canal Amplificado",
+      "w-engineReverberation": "Canal Reverberación de amplificador"
     },
     "gacha": "Sintonización",
     "gachaDetails": "Detalles",

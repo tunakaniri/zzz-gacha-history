@@ -4,9 +4,11 @@
       "all": "Semua FM",
       "bangboo": "FM Bangboo",
       "exclusive": "FM Eksklusif",
+      "exclusiveRescreening": "FM Siaran Ulang Eksklusif",
       "stable": "FM Stabil",
       "type": "Tipe FM",
-      "w-engine": "FM W-Engine"
+      "w-engine": "FM W-Engine",
+      "w-engineReverberation": "FM Gaung W-Engine"
     },
     "gacha": "Cari FM",
     "gachaDetails": "Detail",

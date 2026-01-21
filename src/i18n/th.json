@@ -4,9 +4,11 @@
       "all": "All Channels",
       "bangboo": "Bangboo Channel",
       "exclusive": "Exclusive Channel",
+      "exclusiveRescreening": "Kênh Độc Quyền Phát Lại",
       "stable": "Stable Channel",
       "type": "ประเภท Channel",
-      "w-engine": "W-Engine Channel"
+      "w-engine": "W-Engine Channel",
+      "w-engineReverberation": "Kênh W-Engine Vang Vọng"
     },
     "gacha": "ปรับความถี่",
     "gachaDetails": "รายละเอียด",

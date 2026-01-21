@@ -1,45 +1,47 @@
 {
-  "game": {
-    "channel": {
-      "all": "Todos os canais",
-      "bangboo": "Canal Bangboo",
-      "exclusive": "Canal Exclusivo",
-      "stable": "Canal Estável",
-      "type": "Canal",
-      "w-engine": "Canal Motor-W"
+    "game": {
+        "channel": {
+            "all": "Todos os canais",
+            "bangboo": "Canal Bangboo",
+            "exclusive": "Canal Exclusivo",
+            "exclusiveRescreening": "Canal Reexibição Exclusiva",
+            "stable": "Canal Estável",
+            "type": "Canal",
+            "w-engine": "Canal Motor-W",
+            "w-engineReverberation": "Canal Ressonância de Motor-W"
+        },
+        "gacha": "Busca de Sinal",
+        "gachaDetails": "Detalhes",
+        "gachaHistory": "Histórico",
+        "gachaTime": "Data",
+        "rank": "Classe",
+        "server": "Servidor",
+        "signalList": "Sinais",
+        "signalType": "Tipo",
+        "title": "Zenless Zone Zero"
     },
-    "gacha": "Busca de Sinal",
-    "gachaDetails": "Detalhes",
-    "gachaHistory": "Histórico",
-    "gachaTime": "Data",
-    "rank": "Classe",
-    "server": "Servidor",
-    "signalList": "Sinais",
-    "signalType": "Tipo",
-    "title": "Zenless Zone Zero"
-  },
-  "label": {
-    "fileData_2": "data_2ファイル",
-    "getAuthkeyDirectInput": "手動で入力",
-    "getAuthkeyFromFile": "data_2ファイルから抽出",
-    "lang": "Idioma",
-    "path": "パス:",
-    "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
-    "submit": "Enviar",
-    "uploadHere": "Upload HERE"
-  },
-  "message": {
-    "error": {
-      "authkeyTimeOut": "O authkey expirou. Volte para a tela do jogo, abra a tela de {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) e obtenha o authkey novamente."
+    "label": {
+        "fileData_2": "data_2ファイル",
+        "getAuthkeyDirectInput": "手動で入力",
+        "getAuthkeyFromFile": "data_2ファイルから抽出",
+        "lang": "Idioma",
+        "path": "パス:",
+        "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
+        "submit": "Enviar",
+        "uploadHere": "Upload HERE"
     },
-    "footer": "Esta ferramenta não está relacionada com {mi}, {br}{cog} e {hyv}, e é uma ferramenta {unOfficial}. {br} Além disso, o conteúdo inserido não será enviado para o fornecedor da ferramenta.",
-    "prefix": {
-      "error": "Erro:"
+    "message": {
+        "error": {
+            "authkeyTimeOut": "O authkey expirou. Volte para a tela do jogo, abra a tela de {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) e obtenha o authkey novamente."
+        },
+        "footer": "Esta ferramenta não está relacionada com {mi}, {br}{cog} e {hyv}, e é uma ferramenta {unOfficial}. {br} Além disso, o conteúdo inserido não será enviado para o fornecedor da ferramenta.",
+        "prefix": {
+            "error": "Erro:"
+        },
+        "unOfficial": "não oficial"
     },
-    "unOfficial": "não oficial"
-  },
-  "meta": {
-    "description": "Você pode verificar o {gameGachaHistory} de {gameTitle}.",
-    "title": "{gameGachaHistory} {gameTitle}"
-  }
+    "meta": {
+        "description": "Você pode verificar o {gameGachaHistory} de {gameTitle}.",
+        "title": "{gameGachaHistory} {gameTitle}"
+    }
 }

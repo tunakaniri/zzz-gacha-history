@@ -10,7 +10,7 @@ export async function onSend(urlVar, jsonVar, isFirst) {
     temp_data = [],
     end_id = ''
   const api_url =
-      'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog',
+    'https://public-operation-nap-sg.hoyoverse.com/common/gacha_record/api/getGachaLog',
     size = 20
 
   for (let loop = 0; len === size || loop === 0; loop++) {

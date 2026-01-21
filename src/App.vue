@@ -47,7 +47,7 @@
 <template>
   <header>
     <div>
-      <p>ZZZ</p>
+      <p>{{ $t('game.title') + ' ' + $t('game.gachaHistory') }} </p>
     </div>
     <div style="align-content: center">
       {{ $t('label.lang') + ': ' }}

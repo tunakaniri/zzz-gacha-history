@@ -1,45 +1,47 @@
 {
-  "game": {
-    "channel": {
-      "all": "Все каналы",
-      "bangboo": "Канал банбу",
-      "exclusive": "Выделенный канал",
-      "stable": "Стабильный канал",
-      "type": "Канал",
-      "w-engine": "Канал амплификаторов"
+    "game": {
+        "channel": {
+            "all": "Все каналы",
+            "bangboo": "Канал банбу",
+            "exclusive": "Выделенный канал",
+            "exclusiveRescreening": "Эксклюзивный показ канал",
+            "stable": "Стабильный канал",
+            "type": "Канал",
+            "w-engine": "Канал амплификаторов",
+            "w-engineReverberation": "Канал звук на полную"
+        },
+        "gacha": "Поиск сигнала",
+        "gachaDetails": "Подробности",
+        "gachaHistory": "История поиска",
+        "gachaTime": "Время поиска сигнала",
+        "rank": "ранга",
+        "server": "Сервер",
+        "signalList": "Список сигналов",
+        "signalType": "Тип сигнала",
+        "title": "Zenless Zone Zero"
     },
-    "gacha": "Поиск сигнала",
-    "gachaDetails": "Подробности",
-    "gachaHistory": "История поиска",
-    "gachaTime": "Время поиска сигнала",
-    "rank": "ранга",
-    "server": "Сервер",
-    "signalList": "Список сигналов",
-    "signalType": "Тип сигнала",
-    "title": "Zenless Zone Zero"
-  },
-  "label": {
-    "fileData_2": "data_2ファイル",
-    "getAuthkeyDirectInput": "手動で入力",
-    "getAuthkeyFromFile": "data_2ファイルから抽出",
-    "lang": "Язык",
-    "path": "パス:",
-    "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
-    "submit": "Отправить",
-    "uploadHere": "Upload HERE"
-  },
-  "message": {
-    "error": {
-      "authkeyTimeOut": "Срок действия authkey истёк. Пожалуйста, вернитесь на экран игры, откройте экран {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) и получите authkey заново."
+    "label": {
+        "fileData_2": "data_2ファイル",
+        "getAuthkeyDirectInput": "手動で入力",
+        "getAuthkeyFromFile": "data_2ファイルから抽出",
+        "lang": "Язык",
+        "path": "パス:",
+        "selectGetAuthkeyMethod": "authkeyの入力方法を選択",
+        "submit": "Отправить",
+        "uploadHere": "Upload HERE"
     },
-    "footer": "Этот инструмент не связан с {mi}, {br}{cog} и {hyv}, и является {unOfficial} инструментом. {br} Кроме того, введенное содержимое не будет отправлено поставщику инструмента.",
-    "prefix": {
-      "error": "Ошибка:"
+    "message": {
+        "error": {
+            "authkeyTimeOut": "Срок действия authkey истёк. Пожалуйста, вернитесь на экран игры, откройте экран {gameGachaHistory} ({gameGacha} > {gameGachaDetails} > {gameGachaHistory}) и получите authkey заново."
+        },
+        "footer": "Этот инструмент не связан с {mi}, {br}{cog} и {hyv}, и является {unOfficial} инструментом. {br} Кроме того, введенное содержимое не будет отправлено поставщику инструмента.",
+        "prefix": {
+            "error": "Ошибка:"
+        },
+        "unOfficial": "неофициальный"
     },
-    "unOfficial": "неофициальный"
-  },
-  "meta": {
-    "description": "Вы можете просмотреть {gameGachaHistory} игры {gameTitle}.",
-    "title": "{gameGachaHistory} {gameTitle}"
-  }
+    "meta": {
+        "description": "Вы можете просмотреть {gameGachaHistory} игры {gameTitle}.",
+        "title": "{gameGachaHistory} {gameTitle}"
+    }
 }

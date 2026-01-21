@@ -1,6 +1,7 @@
 <script setup>
   import { ref, computed, onMounted } from 'vue'
   import { useI18n } from 'vue-i18n'
+  import { decode } from 'he'
   import ApiForm from '@/components/api/ApiForm.vue'
   import LanguageSelector from '@/components/i18n/LanguageSelector.vue'
 
@@ -21,9 +22,7 @@
 
   // 数値文字参照変換
   function decodeHtmlEntities(str) {
-    const txt = document.createElement('textarea')
-    txt.innerHTML = str
-    return txt.value
+    return decode(str)
   }
 
   // プレーンテキストに変換して表示

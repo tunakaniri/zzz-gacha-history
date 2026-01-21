@@ -15,7 +15,8 @@
     "dayjs": "^1.11.13",
     "js-cookie": "^3.0.5",
     "vue": "^3.5.20",
-    "vue-i18n": "^11.1.11"
+    "vue-i18n": "^11.1.11",
+    "he": "^1.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
